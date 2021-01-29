@@ -15,7 +15,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   gradingMode:
     overrideState: 0
     value: 1
@@ -1326,7 +1326,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   spectralLut:
     overrideState: 0
     value: {fileID: 0}
@@ -1352,7 +1352,7 @@ MonoBehaviour:
   active: 1
   enabled:
     overrideState: 1
-    value: 1
+    value: 0
   colored:
     overrideState: 0
     value: 1
