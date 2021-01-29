@@ -76,6 +76,7 @@ public class GameManager : MonoBehaviour
     private void GameManager_completed(AsyncOperation obj)
     {
         SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(CurrentSceneIndex));
+        ComicBookManager.instance.PlayComic(ComicType.Scene, CurrentSceneIndex);
         FindAndUpdateSettingsButton();
     }
 
