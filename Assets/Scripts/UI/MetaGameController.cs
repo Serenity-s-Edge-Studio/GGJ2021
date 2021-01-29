@@ -25,11 +25,16 @@ namespace Platformer.UI
         /// </summary>
         public GameController gameController;
 
+        public PlayerActions.UIActions input;
+
         bool showMainCanvas = false;
 
         void OnEnable()
         {
             _ToggleMainMenu(showMainCanvas);
+            input = new PlayerActions().UI;
+            input.Enable();
+            input.Menu.performed += ctx => ToggleMainMenu(show: !showMainCanvas);
         }
 
         /// <summary>
@@ -59,14 +64,6 @@ namespace Platformer.UI
                 foreach (var i in gamePlayCanvasii) i.gameObject.SetActive(true);
             }
             this.showMainCanvas = show;
-        }
-
-        void Update()
-        {
-            if (Input.GetButtonDown("Menu"))
-            {
-                ToggleMainMenu(show: !showMainCanvas);
-            }
         }
 
     }
