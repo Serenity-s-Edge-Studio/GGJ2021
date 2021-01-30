@@ -214,13 +214,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698445191025714954}
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268352, w: 0.9238795}
+  m_LocalRotation: {x: -0, y: -0, z: 0.29830876, w: 0.95446944}
   m_LocalPosition: {x: 3.976327, y: 0.060923886, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7859184129760958925}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 34.712}
 --- !u!1 &1784679832631866311
 GameObject:
   m_ObjectHideFlags: 0
@@ -244,13 +244,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1784679832631866311}
-  m_LocalRotation: {x: 0, y: 0, z: 0.42686167, w: 0.90431696}
+  m_LocalRotation: {x: -0, y: -0, z: 0.378113, w: 0.92575943}
   m_LocalPosition: {x: 4.005434, y: 0.31731832, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1652158622886487043}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 44.434}
 --- !u!1 &1969023418185919049
 GameObject:
   m_ObjectHideFlags: 0
@@ -297,9 +297,11 @@ GameObject:
   - component: {fileID: 323004528}
   - component: {fileID: 992295967685051438}
   - component: {fileID: 407378999640657038}
+  - component: {fileID: 323004534}
+  - component: {fileID: 323004535}
   m_Layer: 0
   m_Name: Detective
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -402,8 +404,8 @@ MonoBehaviour:
   - {fileID: 7626702320148837175}
   - {fileID: 2930464661593181525}
   m_Bounds:
-    m_Center: {x: 1.0256691, y: 1.8029461, z: 0.048267424}
-    m_Extent: {x: 9.445972, y: 15.797771, z: 0.3078603}
+    m_Center: {x: 1.0256691, y: 1.6631594, z: 0.048267424}
+    m_Extent: {x: 9.445972, y: 15.937559, z: 0.3078603}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!95 &323004529
@@ -484,6 +486,43 @@ MonoBehaviour:
   audioSource: {fileID: 0}
   health: {fileID: 0}
   controlEnabled: 1
+--- !u!50 &323004534
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060774702945083975}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!114 &323004535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2060774702945083975}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 038e5d818d37c884dbdc653c1ce1f231, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  camera: {fileID: 0}
+  gunPosition: {x: 0, y: 0}
+  Gun: {fileID: 3417013174677553023}
+  Bullet: {fileID: 4601745668612791681, guid: 33a6ea9ebcecd0c49beb3b043818d142, type: 3}
 --- !u!1 &4059612546882037435
 GameObject:
   m_ObjectHideFlags: 0

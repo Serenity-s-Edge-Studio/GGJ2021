@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - LoadGameButton
+  - SettingsButton
   layers:
   - Default
   - TransparentFX
