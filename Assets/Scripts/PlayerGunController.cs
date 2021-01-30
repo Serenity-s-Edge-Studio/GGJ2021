@@ -13,6 +13,11 @@ public class PlayerGunController : MonoBehaviour
     private Transform Gun;
     [SerializeField]
     private GameObject Bullet;
+    [SerializeField]
+    private Transform BulletSpawnPosition;
+    [SerializeField]
+    private AudioClip Gunshot;
+    private AudioSource source;
 
     private PlayerActions.MovementActions input;
     // Start is called before the first frame update
@@ -22,13 +27,15 @@ public class PlayerGunController : MonoBehaviour
         input = new PlayerActions().Movement;
         input.Enable();
         input.Shoot.performed += Shoot_performed;
+        source = GetComponent<AudioSource>();
     }
 
     private void Shoot_performed(InputAction.CallbackContext obj)
     {
-        GameObject bullet = Instantiate(Bullet, Gun.position, Gun.rotation);
-        Vector2 force = (Gun.position - transform.position).normalized * 60;
+        GameObject bullet = Instantiate(Bullet, BulletSpawnPosition.position, Gun.rotation);
+        Vector2 force = BulletSpawnPosition.right * 60;
         bullet.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+        source.PlayOneShot(Gunshot);
     }
 
     // Update is called once per frame
