@@ -16,6 +16,8 @@ public class SlowMo : MonoBehaviour
     private float _RemainingEnergy;
     [SerializeField]
     private AnimationCurve timeScaleCurve;
+    [SerializeField]
+    private Animator CinemachineAnim;
 
     private PlayerActions.MovementActions input;
     private bool Slowed;
@@ -25,6 +27,8 @@ public class SlowMo : MonoBehaviour
         input = new PlayerActions().Movement;
         input.Enable();
         input.DetectiveMode.performed += DetectiveMode_performed;
+        OnStartSlowdown.AddListener(() => CinemachineAnim.SetBool("GinVision", true));
+        OnEndSlowdown.AddListener(() => CinemachineAnim.SetBool("GinVision", false));
     }
 
     private void DetectiveMode_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -34,9 +38,11 @@ public class SlowMo : MonoBehaviour
             OnEndSlowdown.Invoke();
             Slowed = false;
         }
-        if (Slowed && _RemainingEnergy / _SlowMotionLength > .8f)
+        else if (!Slowed && _RemainingEnergy / _SlowMotionLength > .8f)
+        {
             OnStartSlowdown.Invoke();
-        Slowed = obj.ReadValueAsButton();
+            Slowed = true;
+        }
     }
     private void Update()
     {
