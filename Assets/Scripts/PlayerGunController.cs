@@ -37,7 +37,8 @@ public class PlayerGunController : MonoBehaviour
         Vector2 mousePos = Mouse.current.position.ReadValue();
         Vector2 worldPos = camera.ScreenToWorldPoint(mousePos);
         Vector2 dir = (worldPos - (Vector2)transform.position).normalized;
-        gunPosition = (Vector2)transform.position + dir;
+        float distance = Vector2.Distance(worldPos, (Vector2)transform.position);
+        gunPosition = (Vector2)transform.position + (dir * (distance < 3 ? distance : 3));
         Gun.position = Vector2.Lerp(Gun.position, gunPosition, Time.unscaledDeltaTime);
     }
     private void OnDrawGizmos()
