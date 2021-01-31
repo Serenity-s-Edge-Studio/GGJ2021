@@ -251,11 +251,11 @@ MonoBehaviour:
   - {fileID: 473795149772630621}
   - {fileID: 473795151120872562}
   m_Instructions:
-  - m_FullHash: 1836008572
+  - m_FullHash: 1947097053
     m_VirtualCamera: {fileID: 473795149772630621}
     m_ActivateAfter: 0
     m_MinDuration: 0
-  - m_FullHash: 533282942
+  - m_FullHash: -193074046
     m_VirtualCamera: {fileID: 473795151120872562}
     m_ActivateAfter: 0
     m_MinDuration: 0
@@ -270,9 +270,9 @@ MonoBehaviour:
       m_RotationOrder: 4
   m_CustomBlends: {fileID: 0}
   m_ParentHash:
-  - m_Hash: 533282942
+  - m_Hash: -193074046
     m_ParentHash: 756556552
-  - m_Hash: 1836008572
+  - m_Hash: 1947097053
     m_ParentHash: 756556552
 --- !u!95 &473795150155227878
 Animator:
