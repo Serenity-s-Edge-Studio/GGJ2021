@@ -125,6 +125,7 @@ MonoBehaviour:
   decayTime: 10
   bloodParticles: {fileID: 8297048506704701383, guid: c8f4b7bfb93c3964ab31e6b932fbfc20,
     type: 3}
+  rigidbody: {fileID: 998249960589309126}
 --- !u!114 &5856292596912117446
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -397,11 +397,11 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_Sprite: {fileID: 21300000, guid: 147d6a2236981d54890ca5d0eafc4961, type: 3}
-  m_Type: 0
+  m_Type: 3
   m_PreserveAspect: 1
   m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
+  m_FillMethod: 1
+  m_FillAmount: 0
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -1025,7 +1025,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
@@ -1078,3 +1078,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e581dbcca9b9d34c9e8e2107b45cc6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  GinVisionUI: {fileID: 6531726843462319870}
