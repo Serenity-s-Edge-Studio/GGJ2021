@@ -7,7 +7,8 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public Image GinVisionUI;
-    private Health health;
+    public Health health;
+
     private Rigidbody2D[] rigidbodies;
     private Collider2D mainCollider;
     private Animator animator;
