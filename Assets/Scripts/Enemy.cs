@@ -12,7 +12,6 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         health = GetComponent<Health>();
-        health.onDeath.AddListener(() => SetRagdollStatus(true));
         health.onDeath.AddListener(() => animator.SetTrigger("Die"));
         health.onDeath.AddListener(() => Invoke("remove", 5));
         rigidbodies = GetComponentsInChildren<Rigidbody2D>();
