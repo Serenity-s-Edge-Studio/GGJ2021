@@ -5,6 +5,8 @@ using UnityEngine;
 public class ClueManager : MonoBehaviour
 {
     public static ClueManager instance;
+    public AudioSource audioSource;
+    public AudioClip clueAudio;
     private void Awake()
     {
         if (instance) Destroy(instance);
@@ -13,6 +15,6 @@ public class ClueManager : MonoBehaviour
 
     public void AddClue(Clue clue)
     {
-        throw new System.NotImplementedException();
+        audioSource.PlayOneShot(clueAudio);
     }
 }
