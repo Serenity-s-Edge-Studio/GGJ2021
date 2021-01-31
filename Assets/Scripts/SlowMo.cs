@@ -27,8 +27,8 @@ public class SlowMo : MonoBehaviour
         input = new PlayerActions().Movement;
         input.Enable();
         input.DetectiveMode.performed += DetectiveMode_performed;
-        OnStartSlowdown.AddListener(() => CinemachineAnim.SetBool("GinVision", true));
-        OnEndSlowdown.AddListener(() => CinemachineAnim.SetBool("GinVision", false));
+        OnStartSlowdown.AddListener(() => CinemachineAnim.SetBool("Gin Vision", true));
+        OnEndSlowdown.AddListener(() => CinemachineAnim.SetBool("Gin Vision", false));
     }
 
     private void DetectiveMode_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)

@@ -128,7 +128,7 @@ namespace Platformer.Mechanics
             else if (move.x < -0.01f)
                 transform.LookAt(transform.position - Vector3.forward, Vector2.up);
 
-            animator.SetBool("grounded", IsGrounded);
+            //animator.SetBool("grounded", IsGrounded);
             animator.SetFloat("velocityX", Mathf.Abs(velocity.x) / maxSpeed);
 
             targetVelocity = move * maxSpeed;
