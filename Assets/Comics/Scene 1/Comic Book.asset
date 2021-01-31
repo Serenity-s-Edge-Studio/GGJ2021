@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec561db9cd363e46b0e501830718dfd, type: 3}
+  m_Name: Comic Book
+  m_EditorClassIdentifier: 
+  comicPanels:
+  - panes:
+    - image: {fileID: 21300000, guid: 8bc173d1d1b92454ca61f7551b037ffc, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 
+    - image: {fileID: 21300000, guid: f1cd8386b57fb4b88bc21a6c109c458e, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Wife: "I hope you get cases soon."'
+    - image: {fileID: 21300000, guid: f1cd8386b57fb4b88bc21a6c109c458e, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Wife: "Everyone is struggling, but the people need help from a detective
+        such as yourself!"'
+    - image: {fileID: 21300000, guid: f1cd8386b57fb4b88bc21a6c109c458e, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "...Right. Hopefully."'
+  - panes:
+    - image: {fileID: 21300000, guid: a055eb1dc8eb34a86ba73a269fc0901a, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Daughter: "Daddy! When you get a case, can I come with you?"'
+    - image: {fileID: 21300000, guid: a055eb1dc8eb34a86ba73a269fc0901a, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Daughter: "I want to be a person just like you!"'
+    - image: {fileID: 21300000, guid: a055eb1dc8eb34a86ba73a269fc0901a, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Daughter: "To be someone the neighborhood can rely on!"'
+    - image: {fileID: 21300000, guid: cca809051bce944988112cbf41d49f6f, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Sure thing, honey."'
+    - image: {fileID: 21300000, guid: cca809051bce944988112cbf41d49f6f, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "As soon as I get a case."'
+    - image: {fileID: 21300000, guid: 09e2836a6dcb1405394dc125309ae2be, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "I gotta go. Jobs don''t go find themselves."'
+    - image: {fileID: 21300000, guid: 09e2836a6dcb1405394dc125309ae2be, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Wife: "Oh! Good luck, darling!"'
+    - image: {fileID: 21300000, guid: 162da89c99fb84ab8b4a7db3e22ee2f1, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Good luck, she says... If only she knew."'
