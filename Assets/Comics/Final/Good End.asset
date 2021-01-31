@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fec561db9cd363e46b0e501830718dfd, type: 3}
+  m_Name: Good End
+  m_EditorClassIdentifier: 
+  comicPanels:
+  - panes:
+    - image: {fileID: 21300000, guid: fbb6a20a069901a4e8fab9e9cff5df4c, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "H-honey! You''re okay!"'
+    - image: {fileID: 21300000, guid: fbb6a20a069901a4e8fab9e9cff5df4c, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Wife: "Oh, don''t ''honey'' me! You know full well what you did!"'
+    - image: {fileID: 21300000, guid: fbb6a20a069901a4e8fab9e9cff5df4c, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "I''m sorry! It won''t happen again! I swear it...!"'
+    - image: {fileID: 21300000, guid: fbb6a20a069901a4e8fab9e9cff5df4c, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: GOOD END

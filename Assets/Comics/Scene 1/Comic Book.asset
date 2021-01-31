@@ -52,3 +52,86 @@ MonoBehaviour:
     - image: {fileID: 21300000, guid: 162da89c99fb84ab8b4a7db3e22ee2f1, type: 3}
       voiceLine: {fileID: 0}
       subTitle: 'Detective: "Good luck, she says... If only she knew."'
+  - panes:
+    - image: {fileID: 21300000, guid: a95cdbb66698d40d0937da85cec737f0, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Kenny. Another."'
+    - image: {fileID: 21300000, guid: a95cdbb66698d40d0937da85cec737f0, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Bartender: "You sure? Your tab''s gettin'' pretty high..."'
+    - image: {fileID: 21300000, guid: a95cdbb66698d40d0937da85cec737f0, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Bartender: "I''d really advise against it...!"'
+    - image: {fileID: 21300000, guid: a95cdbb66698d40d0937da85cec737f0, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "...Just do it."'
+    - image: {fileID: 21300000, guid: a95cdbb66698d40d0937da85cec737f0, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: '???: "Oh? Indulge me... what large tabs are you talking about?"'
+    - image: {fileID: 21300000, guid: 5d5e1941f30405d4aaa14f2474349740, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Bartender: "Um... w-well, I..."'
+    - image: {fileID: 21300000, guid: 321c967142a8147469c2b0964bc63fbb, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Bartender: "Don''t tell me you let your tabs get out of hand again,
+        Kenny..."'
+    - image: {fileID: 21300000, guid: 88b2c0010906a47c18bdf7c73467ef28, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Hey, you better stop talking like that."'
+    - image: {fileID: 21300000, guid: 88b2c0010906a47c18bdf7c73467ef28, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Kenny knows I''m good for it. Don''t you dare."'
+    - image: {fileID: 21300000, guid: 88b2c0010906a47c18bdf7c73467ef28, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Henchman: "Ay, boss? ''Bout the money..."'
+    - image: {fileID: 21300000, guid: 88b2c0010906a47c18bdf7c73467ef28, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "I said I''d get you your money... so back off!"'
+    - image: {fileID: 21300000, guid: 88b2c0010906a47c18bdf7c73467ef28, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Henchman: "You don''t talk to the boss like that."'
+    - image: {fileID: 21300000, guid: 88b2c0010906a47c18bdf7c73467ef28, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Huh...?"'
+    - image: {fileID: 21300000, guid: 5d5e1941f30405d4aaa14f2474349740, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: WACK!
+    - image: {fileID: 21300000, guid: 5d5e1941f30405d4aaa14f2474349740, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: The Detective knocks out, cold.
+  - panes:
+    - image: {fileID: 21300000, guid: 5d5e1941f30405d4aaa14f2474349740, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: The Detective wakes up.
+    - image: {fileID: 21300000, guid: 5d5e1941f30405d4aaa14f2474349740, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Ungh... I gotta get home."'
+    - image: {fileID: 21300000, guid: 5d5e1941f30405d4aaa14f2474349740, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: ...!'
+    - image: {fileID: 21300000, guid: 772b0224d393447f89f548cf991bacb5, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "WHAT THE HELL HAPPENED?!"'
+    - image: {fileID: 21300000, guid: 772b0224d393447f89f548cf991bacb5, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "WHERE ARE YOU TWO? HONEY?!"'
+    - image: {fileID: 21300000, guid: 30e47e41d128c4be48e2d63b2282342b, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Daughter: "D-dad...? Is that you...?"'
+    - image: {fileID: 21300000, guid: 30e47e41d128c4be48e2d63b2282342b, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Sweetheart! Your mom! Where is she?!"'
+    - image: {fileID: 21300000, guid: 30e47e41d128c4be48e2d63b2282342b, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Daughter: "They... took her! I was hiding in here, but..."'
+    - image: {fileID: 21300000, guid: 30e47e41d128c4be48e2d63b2282342b, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "Damn it...! Stay here. I''ll be back!"'
+  - panes:
+    - image: {fileID: 21300000, guid: cd91b32c8207543af871338a40622b43, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: The Detective whose wife is missing, is now taken by the Mafia.
+    - image: {fileID: 21300000, guid: 5ea1dd459df044c0f975602582fd4932, type: 3}
+      voiceLine: {fileID: 0}
+      subTitle: 'Detective: "I''m so sorry for what I''ve done... I''ll get you back.
+        I swear!"'
