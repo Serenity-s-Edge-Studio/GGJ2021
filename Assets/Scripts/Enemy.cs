@@ -12,12 +12,12 @@ public class Enemy : MonoBehaviour
     private void Start()
     {
         health = GetComponent<Health>();
-        health.onDeath.AddListener(() => SetRagdollStatus(true));
         health.onDeath.AddListener(() => animator.SetTrigger("Die"));
         health.onDeath.AddListener(() => Invoke("remove", 5));
         rigidbodies = GetComponentsInChildren<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        EnemyManager.instance.enemies.Add(this);
     }
     private void SetRagdollStatus(bool enableRagdoll)
     {
@@ -32,5 +32,9 @@ public class Enemy : MonoBehaviour
     private void remove()
     {
         Destroy(gameObject);
+    }
+    private void OnDestroy()
+    {
+        EnemyManager.instance.enemies.Remove(this);
     }
 }
