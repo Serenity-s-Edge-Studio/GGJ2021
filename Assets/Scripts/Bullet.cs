@@ -14,6 +14,7 @@ public class Bullet : MonoBehaviour
         {
             health.Damage(damage);
             Destroy(Instantiate(bloodParticles, transform.position, Quaternion.identity), 5);
+            Destroy(gameObject);
         }
     }
     private void Update()

@@ -830,13 +830,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canShoot: 1
-  bulletForce: 50
+  bulletForce: 25
+  target: {fileID: 0}
   camera: {fileID: 0}
   gunPosition: {x: 0, y: 0}
-  Gun: {fileID: 3417013174677553023}
+  GunIKSolver: {fileID: 3417013174677553023}
   Bullet: {fileID: -1894734129936871338, guid: 33a6ea9ebcecd0c49beb3b043818d142, type: 3}
   BulletSpawnPosition: {fileID: 507836535}
   Gunshot: {fileID: 8300000, guid: b1d9be03646ac574da8c3034b32e455e, type: 3}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 63
 --- !u!82 &722813645
 AudioSource:
   m_ObjectHideFlags: 0
@@ -991,9 +995,10 @@ MonoBehaviour:
   gunController: {fileID: 323004535}
   enemyMask:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 63
   maxTargets: 3
   bulletCam: {fileID: 0}
+  state: 0
 --- !u!1 &4059612546882037435
 GameObject:
   m_ObjectHideFlags: 0

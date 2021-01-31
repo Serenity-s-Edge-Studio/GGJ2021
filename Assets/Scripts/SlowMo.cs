@@ -43,7 +43,7 @@ public class SlowMo : MonoBehaviour
     {
         if (Slowed && !obj.ReadValueAsButton())
         {
-            state = GinVisionState.Shooting;
+            state = targetedEnemies.Count > 0 ? GinVisionState.Shooting : GinVisionState.Ending;
             OnEndSlowdown.Invoke();
             Slowed = false;
         }
@@ -58,6 +58,8 @@ public class SlowMo : MonoBehaviour
     private GinVisionState state;
     private Queue<Enemy> targetedEnemies = new Queue<Enemy>();
     private Bullet bullet;
+    private float bulletLifetime;
+    private Coroutine shootingCoroutine;
     private void Update()
     {
         switch (state)
@@ -107,28 +109,36 @@ public class SlowMo : MonoBehaviour
                 }
                 break;
             case GinVisionState.Shooting:
-                CinemachineAnim.SetBool("Gin Vision", false);
-                CinemachineAnim.SetBool("Bullet Cam", true);
-                if (targetedEnemies.Count == 0 && bullet == null)
+                //if (shootingCoroutine == null) StartCoroutine(ShootingCoroutine());
+                if (gunController.target == null || gunController.target.health.currentHealth < 1) gunController.SetTarget(targetedEnemies.Peek());
+                if (gunController.target != null && gunController.isAimedAtTarget()
+                    && (bullet == null || bulletLifetime > 2f))
                 {
-                    state = GinVisionState.Ending;
-                    break;
-                }
-                if (bullet == null)
-                {
+                    CinemachineAnim.SetBool("Bullet Cam", true);
                     bullet = gunController.ShootGun();
-                    Vector3 dir = targetedEnemies.Dequeue().transform.position - transform.position;
-                    float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-                    bullet.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-                    bullet.rigidbody.velocity = Vector2.zero;
-                    bullet.rigidbody.AddForce(bullet.transform.right * gunController.bulletForce);
+                    bulletLifetime = 0;
                     bulletCam.Follow = bullet.transform;
+                    targetedEnemies.Dequeue();
+                    if (targetedEnemies.Count == 0)
+                    {
+                        state = GinVisionState.Ending;
+                        break;
+                    }
                 }
+                if (bullet == null || bulletLifetime > 1f) CinemachineAnim.SetBool("Bullet Cam", false);
+                ////if (targetedEnemies.Count == 0 && (bullet == null || bulletLifetime > 2f))
+                ////{
+                ////    state = GinVisionState.Ending;
+                ////    break;
+                ////}
+                bulletLifetime += Time.unscaledDeltaTime;
                 break;
             case GinVisionState.Ending:
                 CinemachineAnim.SetBool("Gin Vision", false);
                 CinemachineAnim.SetBool("Bullet Cam", false);
                 gunController.canShoot = true;
+                gunController.SetTarget(null);
+                targetedEnemies.Clear();
                 foreach (Enemy enemy in EnemyManager.instance.enemies)
                 {
                     enemy.GinVisionUI.gameObject.SetActive(false);
@@ -139,6 +149,31 @@ public class SlowMo : MonoBehaviour
         }
         Time.timeScale = timeScaleCurve.Evaluate(_RemainingEnergy / _SlowMotionLength);
         TimerUI.fillAmount = _RemainingEnergy / _SlowMotionLength;
+    }
+    private IEnumerator ShootingCoroutine()
+    {
+        CinemachineAnim.SetBool("Gin Vision", false);
+        CinemachineAnim.SetBool("Bullet Cam", true);
+        while (targetedEnemies.Count > 0)
+        {
+            if (gunController.target == null || gunController.target.health.currentHealth < 1) gunController.SetTarget(targetedEnemies.Peek());
+            if (gunController.target != null && gunController.isAimedAtTarget()
+                && (bullet == null || bulletLifetime > 2f))
+            {
+                bullet = gunController.ShootGun();
+                bulletLifetime = 0;
+                bulletCam.Follow = bullet.transform;
+                targetedEnemies.Dequeue();
+            }
+            if (bullet != null) bulletLifetime += Time.unscaledDeltaTime;
+            yield return null;
+        }
+        state = GinVisionState.Ending;
+        //if (targetedEnemies.Count == 0 && (bullet == null || bulletLifetime > 2f))
+        //{
+        //    state = GinVisionState.Ending;
+        //    break;
+        //}
     }
     private enum GinVisionState
     {
