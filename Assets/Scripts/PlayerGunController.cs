@@ -17,6 +17,8 @@ public class PlayerGunController : MonoBehaviour
     private Transform BulletSpawnPosition;
     [SerializeField]
     private AudioClip Gunshot;
+    [SerializeField]
+    private float bulletForce;
     private AudioSource source;
 
     private PlayerActions.MovementActions input;
@@ -32,8 +34,8 @@ public class PlayerGunController : MonoBehaviour
 
     private void Shoot_performed(InputAction.CallbackContext obj)
     {
-        GameObject bullet = Instantiate(Bullet, BulletSpawnPosition.position, Gun.rotation);
-        Vector2 force = BulletSpawnPosition.right * 60;
+        GameObject bullet = Instantiate(Bullet, BulletSpawnPosition.position, BulletSpawnPosition.rotation);
+        Vector2 force = BulletSpawnPosition.right * bulletForce;
         bullet.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
         source.PlayOneShot(Gunshot);
     }
