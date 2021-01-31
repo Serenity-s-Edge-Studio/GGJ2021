@@ -8,9 +8,10 @@ public class Bullet : MonoBehaviour
     public float decayTime;
     public GameObject bloodParticles;
     public Rigidbody2D rigidbody;
+    public string targetTag;
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Enemy") && collision.TryGetComponent(out Health health))
+        if (collision.CompareTag(targetTag) && collision.TryGetComponent(out Health health))
         {
             health.Damage(damage);
             Destroy(Instantiate(bloodParticles, transform.position, Quaternion.identity), 5);

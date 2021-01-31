@@ -47,6 +47,7 @@ public class PlayerGunController : MonoBehaviour
         Bullet bullet = Instantiate(Bullet, BulletSpawnPosition.position, BulletSpawnPosition.rotation);
         Vector2 force = BulletSpawnPosition.right * bulletForce;
         bullet.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
+        bullet.targetTag = "Enemy";
         source.PlayOneShot(Gunshot);
         return bullet;
     }
@@ -79,10 +80,6 @@ public class PlayerGunController : MonoBehaviour
             Debug.Log(hit.collider.name + " " + target.name);
         }
         return hit.collider != null && hit.collider.gameObject.name.Equals(target.gameObject.name);
-        //Vector3 dir = (BulletSpawnPosition.position - target.transform.position).normalized;
-        //float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
-        //Debug.Log(angle);
-        //return angle < 5f;
     }
     private void OnDrawGizmos()
     {
