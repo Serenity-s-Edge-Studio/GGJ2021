@@ -11,7 +11,7 @@ public class PlayerGunController : MonoBehaviour
     [SerializeField]
     private new Camera camera;
     [SerializeField]
-    private Vector2 gunPosition;
+    public Vector2 gunPosition;
     [SerializeField]
     private Transform GunIKSolver;
     [SerializeField]

@@ -32,7 +32,6 @@ namespace Platformer.Mechanics
         private bool stopJump;
         /*internal new*/ public Collider2D collider2d;
         /*internal new*/ public AudioSource audioSource;
-        public Health health;
         public bool controlEnabled = true;
 
         bool jump;
@@ -45,9 +44,13 @@ namespace Platformer.Mechanics
 
         public Bounds Bounds => collider2d.bounds;
 
+        public PlayerGunController gunController;
+        public Health health;
+
         void Awake()
         {
             health = GetComponent<Health>();
+            health.onDeath.AddListener(() => ComicBookManager.instance.PlayComic(ComicType.Scene, 1));
             audioSource = GetComponent<AudioSource>();
             collider2d = GetComponent<Collider2D>();
             spriteRenderer = GetComponent<SpriteRenderer>();
@@ -122,10 +125,10 @@ namespace Platformer.Mechanics
                     velocity.y = velocity.y * model.jumpDeceleration;
                 }
             }
-
-            if (move.x > 0.01f)
+            Vector2 distance = (Vector2)transform.position - gunController.gunPosition;
+            if (move.x > 0.01f || distance.x > 0.01f)
                 transform.LookAt(transform.position + Vector3.forward, Vector2.up);
-            else if (move.x < -0.01f)
+            else if (move.x < -0.01f || distance.x < 0.01f)
                 transform.LookAt(transform.position - Vector3.forward, Vector2.up);
 
             //animator.SetBool("grounded", IsGrounded);

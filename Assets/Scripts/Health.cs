@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     private AudioClip[] deathClips;
     [SerializeField]
     private AudioSource source;
+
+    private bool isDead = false;
     public void Damage(int amount)
     {
         currentHealth -= amount;
@@ -22,7 +24,11 @@ public class Health : MonoBehaviour
     }
     public void Die()
     {
-        onDeath.Invoke();
-        source.PlayOneShot(deathClips[Random.Range(0, deathClips.Length - 1)]);
+        if (!isDead)
+        {
+            isDead = true;
+            onDeath.Invoke();
+            source.PlayOneShot(deathClips[Random.Range(0, deathClips.Length - 1)]);
+        }
     }
 }
