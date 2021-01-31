@@ -44,7 +44,7 @@ public class Enemy : MonoBehaviour
         mainCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
         source = GetComponent<AudioSource>();
-        timer = gunTimer;
+        timer = getNextTimer();
         EnemyManager.instance.enemies.Add(this);
     }
     private void Update()
@@ -53,7 +53,7 @@ public class Enemy : MonoBehaviour
         if (timer <= 0 && target != null && isAimedAtTarget())
         {
             ShootGun();
-            timer = gunTimer;
+            timer = getNextTimer();
         }
         timer -= Time.deltaTime;
     }
@@ -84,6 +84,10 @@ public class Enemy : MonoBehaviour
             Debug.Log(hit.collider.name + " " + target.name);
         }
         return hit.collider != null && hit.collider.gameObject.name.Equals(target.gameObject.name);
+    }
+    private float getNextTimer()
+    {
+        return Random.Range(minGunTimer, gunTimer);
     }
     private void remove()
     {
