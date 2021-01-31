@@ -17,6 +17,7 @@ public class Enemy : MonoBehaviour
         rigidbodies = GetComponentsInChildren<Rigidbody2D>();
         mainCollider = GetComponent<Collider2D>();
         animator = GetComponent<Animator>();
+        EnemyManager.instance.enemies.Add(this);
     }
     private void SetRagdollStatus(bool enableRagdoll)
     {
@@ -31,5 +32,9 @@ public class Enemy : MonoBehaviour
     private void remove()
     {
         Destroy(gameObject);
+    }
+    private void OnDestroy()
+    {
+        EnemyManager.instance.enemies.Remove(this);
     }
 }
