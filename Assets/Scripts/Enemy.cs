@@ -49,8 +49,13 @@ public class Enemy : MonoBehaviour
     }
     private void Update()
     {
-        if (target != null) GunIKSolver.position = target.transform.position;
-        if (timer <= 0 && target != null && isAimedAtTarget())
+        if (target == null) return;
+        float distance = Vector2.Distance(transform.position, target.transform.position);
+        
+        if (distance < 10f) GunIKSolver.position = target.transform.position;
+        
+        if (timer <= 0 && target != null 
+            && distance < 10f && isAimedAtTarget())
         {
             ShootGun();
             timer = getNextTimer();
