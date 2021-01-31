@@ -1004,8 +1004,8 @@ MonoBehaviour:
   - {fileID: 9079705586407263684}
   - {fileID: 7730246114071435702}
   m_Bounds:
-    m_Center: {x: 2.3429594, y: -1.7381821, z: 0}
-    m_Extent: {x: 11.541769, y: 21.169178, z: 0}
+    m_Center: {x: 2.3429346, y: -1.7381802, z: 0}
+    m_Extent: {x: 11.541775, y: 21.169174, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
 --- !u!114 &822494832
@@ -1065,7 +1065,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 0
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &6917928095836869899
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -1146,7 +1146,6 @@ MonoBehaviour:
     m_Bits: 127
   gunTimer: 10
   minGunTimer: 5
-  audioClips: []
 --- !u!82 &3653429599601639680
 AudioSource:
   m_ObjectHideFlags: 0
