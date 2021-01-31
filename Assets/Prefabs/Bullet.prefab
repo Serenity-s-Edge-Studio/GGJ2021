@@ -121,11 +121,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79a9c4bc810cac542a91a2b0b8572656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 10
+  damage: 1
   decayTime: 10
   bloodParticles: {fileID: 8297048506704701383, guid: c8f4b7bfb93c3964ab31e6b932fbfc20,
     type: 3}
   rigidbody: {fileID: 998249960589309126}
+  targetTag: 
 --- !u!114 &5856292596912117446
 MonoBehaviour:
   m_ObjectHideFlags: 0
