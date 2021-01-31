@@ -9,6 +9,15 @@ public class Bullet : MonoBehaviour
     public GameObject bloodParticles;
     public Rigidbody2D rigidbody;
     public string targetTag;
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.collider.CompareTag(targetTag) && collision.collider.TryGetComponent(out Health health))
+        {
+            health.Damage(damage);
+            Destroy(Instantiate(bloodParticles, transform.position, Quaternion.identity), 5);
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag(targetTag) && collision.TryGetComponent(out Health health))
