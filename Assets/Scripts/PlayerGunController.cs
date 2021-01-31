@@ -5,6 +5,8 @@ using UnityEngine.InputSystem;
 
 public class PlayerGunController : MonoBehaviour
 {
+    public bool canShoot = true;
+    public float bulletForce;
     [SerializeField]
     private new Camera camera;
     [SerializeField]
@@ -12,13 +14,12 @@ public class PlayerGunController : MonoBehaviour
     [SerializeField]
     private Transform Gun;
     [SerializeField]
-    private GameObject Bullet;
+    private Bullet Bullet;
     [SerializeField]
     private Transform BulletSpawnPosition;
     [SerializeField]
     private AudioClip Gunshot;
-    [SerializeField]
-    private float bulletForce;
+
     private AudioSource source;
 
     private PlayerActions.MovementActions input;
@@ -34,12 +35,19 @@ public class PlayerGunController : MonoBehaviour
 
     private void Shoot_performed(InputAction.CallbackContext obj)
     {
-        GameObject bullet = Instantiate(Bullet, BulletSpawnPosition.position, BulletSpawnPosition.rotation);
+        if (canShoot)
+        {
+            ShootGun();
+        }
+    }
+    public Bullet ShootGun()
+    {
+        Bullet bullet = Instantiate(Bullet, BulletSpawnPosition.position, BulletSpawnPosition.rotation);
         Vector2 force = BulletSpawnPosition.right * bulletForce;
         bullet.GetComponent<Rigidbody2D>().AddForce(force, ForceMode2D.Impulse);
         source.PlayOneShot(Gunshot);
+        return bullet;
     }
-
     // Update is called once per frame
     void Update()
     {

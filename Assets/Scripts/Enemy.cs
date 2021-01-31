@@ -1,9 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 [RequireComponent(typeof(Health), typeof(Animator), typeof(CapsuleCollider2D))]
 public class Enemy : MonoBehaviour
 {
+    public Image GinVisionUI;
     private Health health;
     private Rigidbody2D[] rigidbodies;
     private Collider2D mainCollider;
