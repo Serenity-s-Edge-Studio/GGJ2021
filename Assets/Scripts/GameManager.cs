@@ -22,23 +22,25 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
 #if !UNITY_EDITOR
-        LoadScene(1);
+        LoadSceneSync(1);
 #else
-        if (SceneManager.GetSceneByBuildIndex(CurrentSceneIndex).isLoaded)
-        {
-            var buttonList = GetAllObjectsOnlyInSceneWithTag<Button>("LoadGameButton");
-            if (buttonList.Count > 0)
-            {
-                Button loadGameButton = buttonList[0];
-                loadGameButton.onClick.AddListener(() => LoadScene(2));
-            }
-            else
-            {
-                Debug.LogWarning("Could not finds settings button in loaded scenes");
-            }
-        }
+        SetPlayButton();
 #endif
     }
+    private void SetPlayButton()
+    {
+        var buttonList = GetAllObjectsOnlyInSceneWithTag<Button>("LoadGameButton");
+        if (buttonList.Count > 0)
+        {
+            Button loadGameButton = buttonList[0];
+            loadGameButton.onClick.AddListener(() => LoadScene(2));
+        }
+        else
+        {
+            Debug.LogWarning("Could not finds settings button in loaded scenes");
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -55,22 +57,15 @@ public class GameManager : MonoBehaviour
     }
     public void LoadScene(int index)
     {
-        LoadScene(index, null);
-    }
-    public void LoadScene(int index, System.Action<AsyncOperation>[] onComplete)
-    {
-        if (SceneManager.GetSceneByBuildIndex(CurrentSceneIndex).isLoaded)
-            SceneManager.UnloadSceneAsync(CurrentSceneIndex);
-        AsyncOperation LoadSceneOperation = SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
-        if (onComplete != null)
-        {
-            foreach (System.Action<AsyncOperation> operation in onComplete)
-            {
-                LoadSceneOperation.completed += operation;
-            }
-        }
-        LoadSceneOperation.completed += GameManager_completed;
+        SceneManager.UnloadSceneAsync(CurrentSceneIndex);
+        var loadSceneOperation = SceneManager.LoadSceneAsync(index, LoadSceneMode.Additive);
+        loadSceneOperation.completed += (AsyncOperation obj) => GameManager_completed(obj);
         CurrentSceneIndex = index;
+    }
+    public void LoadSceneSync(int index)
+    {
+        SceneManager.LoadScene(index, LoadSceneMode.Additive);
+        SetPlayButton();
     }
 
     private void GameManager_completed(AsyncOperation obj)

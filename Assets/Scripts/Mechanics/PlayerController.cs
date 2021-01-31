@@ -125,10 +125,10 @@ namespace Platformer.Mechanics
                     velocity.y = velocity.y * model.jumpDeceleration;
                 }
             }
-            Vector2 distance = (Vector2)transform.position - gunController.gunPosition;
-            if (move.x > 0.01f || distance.x > 0.01f)
+            //Vector2 distance = (Vector2)transform.position - gunController.gunPosition;
+            if (move.x > 0.01f)
                 transform.LookAt(transform.position + Vector3.forward, Vector2.up);
-            else if (move.x < -0.01f || distance.x < 0.01f)
+            else if (move.x < -0.01f)
                 transform.LookAt(transform.position - Vector3.forward, Vector2.up);
 
             //animator.SetBool("grounded", IsGrounded);
